@@ -20,16 +20,20 @@ const Segment = ({ title, one, two, three }) => {
     return (
       <div className="display_section">
         <h2>{title}</h2>
-        <h4>
-          {one}: {info.first}
-        </h4>
-        <h4>
-          {two}: {info.second}
-        </h4>
-        <h4>
-          {three}: {info.third}
-        </h4>
-        <button onClick={() => setEditMode((prev) => !prev)}>Edit CV</button>
+        <div className="display_info">
+          <h4>
+            {one}: {info.first}
+          </h4>
+          <h4>
+            {two}: {info.second}
+          </h4>
+          <h4>
+            {three}: {info.third}
+          </h4>
+        </div>
+        <button onClick={() => setEditMode((prev) => !prev)}>
+          Edit {title}
+        </button>
       </div>
     );
   }
@@ -44,7 +48,9 @@ const Segment = ({ title, one, two, three }) => {
         <input name="second" id={two} value={info.second} onChange={makeEdit} />
         <label htmlFor={three}>{three}: </label>
         <input name="third" id={three} value={info.third} onChange={makeEdit} />
-        <button onClick={() => setEditMode((prev) => !prev)}>Finish CV</button>
+        <button onClick={() => setEditMode((prev) => !prev)}>
+          Finish {title}
+        </button>
       </form>
     </div>
   );

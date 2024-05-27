@@ -18,3 +18,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.display_info {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
